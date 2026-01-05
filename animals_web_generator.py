@@ -22,7 +22,10 @@ if __name__ == '__main__':
     template = load_data("animals_template.html")
     animal_name = input("Please enter an animal: ")
     data = data_fetcher.fetch_data(animal_name)
-    html_animal = build_html_data(data)
+    if data == []:
+        html_animal = f"<h2>The animal '{animal_name}' doesn't exist.</h2>"
+    else:
+        html_animal = build_html_data(data)
     final_data_animal = template.replace("__REPLACE_ANIMALS_INFO__", html_animal)
 
     with open("index.html", "w") as handle:
