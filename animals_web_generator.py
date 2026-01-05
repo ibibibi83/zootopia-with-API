@@ -30,3 +30,5 @@ if __name__ == '__main__':
 
     with open("index.html", "w") as handle:
         handle.write(final_data_animal)
+
+    print("Website was successfully generated to the file index.html.")
